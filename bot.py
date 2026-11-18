@@ -84,9 +84,10 @@ async def handle_tiktok_link(message: Message):
         likes = format_number(v.get("digg_count", 0))
         comments = format_number(v.get("comment_count", 0))
 
+        title_line = f"📝 <b>Caption:</b> {title}\n" if title else ""
         caption = (
             f"🎬 <b>Author:</b> @{username}\n"
-            f"{f'📝 <b>Caption:</b> {title}\n' if title else ''}"
+            f"{title_line}"
             f"👁 <b>Views:</b> {views}  |  ❤️ <b>Likes:</b> {likes}  |  💬 <b>Comments:</b> {comments}\n\n"
             f"⏳ <i>This video will be auto-deleted in 10 minutes.</i>"
         )
